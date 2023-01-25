@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conv-temp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: conv-temp
+  template:
+    metadata:
+      labels: 
+        app: conv-temp
+    spec:
+      containers:
+        - name: conv-temp
+          image: ahsisti/conversaotemperatura:v1
+          ports:
+          - containerPort: 8080

@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: conv-temp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: conv-temp
   template:
     metadata:
-      labels: 
+      labels:
         app: conv-temp
     spec:
       containers:
         - name: conv-temp
           image: ahsisti/conversaotemperatura:v1
           ports:
-          - containerPort: 8080
+            - containerPort: 8080
